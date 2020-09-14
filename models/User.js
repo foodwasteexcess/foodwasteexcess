@@ -12,7 +12,9 @@ const userSchema = new Schema({
     required: true,
   },
  
-  image: String, 
+  imgName: String,
+  imgPath: String,
+  imgPublicId: String
   
 
 

@@ -2,7 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
-//const { uploader, cloudinary } = require('../config/cloudinary.js')
+const { uploader, cloudinary } = require('../config/cloudinary.js')
 
 router.get('/signup', (req, res, next) => {
   res.render('./auth/signup');
@@ -14,11 +14,16 @@ router.get('/login', (req, res, next) => {
 
 
 
-router.post('/signup', (req, res, next) => {
+router.post('/signup', uploader.single('photo'), (req, res, next) => {
   //if password is empty or <8 charachter ->
   // show the form again with error message
-  const {email, password, firstName, lastName, image} = req.body;
-  console.log(email)
+  const {email, password, firstName, lastName, photo} = req.body;
+console.log('this is photo:' ,photo)
+console.log("this is req.file", req)
+  // const imgName = req.file.originalname;
+  // const imgPath = req.file.url;
+  // const imgPublicId = req.file.public_id;
+
   if (password.length < 8) {
     res.render('./auth/signup', {message: 'Your password needs to be 8 characters min'})
     return;
@@ -42,7 +47,9 @@ email: email,
 password: hash,
 firstName: firstName ,
 lastName: lastName ,
-image: image,
+imgName: imgName, 
+imgPath: imgPath, 
+imgPublicId: imgPublicId
 })
 .then(userFromDb => {
   

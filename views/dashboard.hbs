@@ -1,9 +1,13 @@
-{{#with user}}
+ {{#with user}}
+    <div class="user">
+      <h4>{{this.firstName}}</h4>
+      <img src="{{this.imgPath}}" alt="Your image">
+      {{!-- <a href="/movie/delete/{{this._id}}">❌</a> --}}
+    </div>
+    {{/with}}
 
-<h1>Hallo {{firstName}}</h1>
-
-<a href="/logout">Logout</a>
-
-{{/with}}
+    <a href="/logout">Logout</a>
 
 <h1>Hallo</h1>
+
+ 

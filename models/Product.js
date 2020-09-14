@@ -9,10 +9,11 @@ const productSchema = new Schema({
     type: String,
     required: true
   },
-  image: {
-    type: String,
-    required: true
-  },
+
+  imgName: String,
+  imgPath: String,
+  imgPublicId: String,
+
   category: {
     type: String,
     required: true,
