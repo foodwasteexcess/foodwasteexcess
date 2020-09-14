@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const userSchema = new Schema({
+  email: String,
+  password: String,
   firstName: {
     type: String, 
     required: true,
@@ -9,9 +11,10 @@ const userSchema = new Schema({
     type: String, 
     required: true,
   },
-  email: String,
-  password: String,
-  image: String, 
+ 
+  imgName: String,
+  imgPath: String,
+  imgPublicId: String
   
 
 

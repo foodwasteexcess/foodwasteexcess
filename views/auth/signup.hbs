@@ -1,0 +1,27 @@
+<form action="/signup" method="POST">
+
+<label for="email">Email:</label>
+<input type="text" name="email" id="email" required>
+{{!-- username is what is console loggt in the auth.js --}}
+
+<label for="password">Password:</label>
+<input type="password" name="password" id="password" required>
+
+<label for="firstName">First Name:</label>
+<input type="firstName" name="firstName" id="firstName" required>
+
+<label for="lastName">Last Name:</label>
+<input type="lastName" name="lastName" id="lastName" required>
+
+  <label for="photo">Your picture</label>
+  <input type="file" name="photo" id="photo">
+
+<button type="submit">Sign up</button>
+
+</form>
+
+{{#if message}}
+<p style="color: red">{{message}}</p>
+{{/if}}
+
+<a href="/">Home</a>
