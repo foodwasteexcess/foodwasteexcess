@@ -11,7 +11,10 @@ const path         = require('path');
 
 
 mongoose
-  .connect('mongodb://localhost/foodwasteexcess', {useNewUrlParser: true})
+  .connect('mongodb://localhost/foodwasteexcess', 
+  {useNewUrlParser: true},
+  {useUnifiedTopology: true}
+  )
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -29,6 +32,29 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+
+//session configuration part
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    cookie: {maxAge:24*60*60*1000},
+    saveUninitialized:false,
+    resave:true,
+    store: new MongoStore({
+        // when the session cookie has an expired date
+        // connect-mongo will use it, otherwise it will create a new one
+        // and use ttl - time to live - in that case one day
+        mongooseConnection: mongoose.connection,
+        ttl: 24*60*60*1000
+
+    })
+  })
+)
+// end of session configuration
 
 // Express View engine setup
 
@@ -53,6 +79,12 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 const index = require('./routes/index');
 app.use('/', index);
+
+
+//comment Sophia: not sure if this is right: 
+const auth = require('./routes/auth');
+app.use('/', auth);
+
 
 
 module.exports = app;
