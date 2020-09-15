@@ -1,6 +1,8 @@
 {{#with user}}
 <div class="user">
-  <h1>Hello {{this.firstName}}, welcome to your dashboard!</h1>
+  <h1 class="center">Hello {{this.firstName}}, welcome to your dashboard!</h1>
+
+<p class="details">Your profile picture:</p>
 
   <img src="{{this.imgPath}}" alt="Your image" width="200px" height="150px">
     <a href="/picture/delete/{{this._id}}">❌</a>
@@ -44,6 +46,13 @@
 {{/unless}}
 
 {{/each}}
+
+<p class="details" >Your location:</p>
+
+<div class="wrapper">
+  <div class="navi" id="map" style='width: 40%; height: 50vh;'></div>
+
+    </div>
 
 
 <a href="/logout">Logout</a>
