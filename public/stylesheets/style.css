@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
 }
 
 .title {
@@ -34,6 +35,8 @@ nav li {
   justify-content: center;
   align-items: baseline;
   align-content: center;
+  padding: 20px 0 40px 0;
+  font-size: 35px;
 }
 
 .btn {
@@ -55,8 +58,15 @@ nav li {
 }
 
 .homepage-btn {
-  width: 200px;
-  max-width: 200px;
+  margin: 80px 0;
+  width: 300px;
+  max-width: 300px;
+  font-size: 16px;
+
+}
+
+.intro-text {
+font-size: 18px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,9 +1,18 @@
 {{#with user}}
 <div class="user">
-  <h1>Hello {{this.firstName}}!</h1>
+  <h1>Hello {{this.firstName}}, welcome to your dashboard!</h1>
 
   <img src="{{this.imgPath}}" alt="Your image" width="200px" height="150px">
+    <a href="/picture/delete/{{this._id}}">❌</a>
 </div>
+
+{{#unless this.imgPath}}
+
+  <label for="photo">Add photo</label>
+  <input type="file" name="photo" id="photo" value=>
+
+  {{/unless}}
+
 {{/with}}
 
 {{#each product}}
@@ -16,22 +25,25 @@
 {{this.title}}
 {{this.imgPath}}
 
-<a href="/product/add">Add product</a>
-
 <a href="/product/edit">Edit product</a>
 
 <a href="/product/delete">Delete product</a>
+
+<p>Is there a new product you want to add?</p>
+
+<a href="/product/add">Add new product</a>
 
 
 {{#unless product}}
 
 <h2> No product sitting in your fridge or your cupboard about to expire? </h2>
-<p> Give your first excess and become part of the excess community!</p>
+<p> Add your first product to give away!</p>
+
+<a href="/product/add">Add new product</a>
 
 {{/unless}}
 
 {{/each}}
-
 
 
 <a href="/logout">Logout</a>
