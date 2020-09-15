@@ -7,17 +7,21 @@
   </nav>
 </header>
 
-{{#each product}}
+{{#with product}}
 
-<h2>{{title}}</h2>
+<h2>Title: {{title}}</h2>
+<p>Brand: {{brand}}</p>
+  <img src="{{imgPath}}" alt="Your image" width="200px" height="150px">
 
-<img src="{{image_url}}" alt="{{name}}">
+<p>Description:{{description}}</p>
+<p>This product expires by: {{expiryDate}}</p>
 
-<h3>What about it? </h3> <br>
+<p>You can find this product at:{{location}}</p>
+<p>Category: {{category}}</p>
 
-{{Description}}
 
-{{/each product}}
+{{/with}}
+
 
 <h3>Interested in getting it?</h3>
 <p>Leave a comment to the owner to let him know you want to help clean its fridge!</p>
