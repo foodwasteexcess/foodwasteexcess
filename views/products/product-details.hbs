@@ -1,0 +1,50 @@
+<header>
+  <nav>
+    <ul>
+      <li> <a href="/">Home</a> </li>
+      <li> <a href="/logout">Log out</a> </li>
+    </ul>
+  </nav>
+</header>
+
+{{#each product}}
+
+<h2>{{title}}</h2>
+
+<img src="{{image_url}}" alt="{{name}}">
+
+<h3>What about it? </h3> <br>
+
+{{Description}}
+
+{{/each product}}
+
+<h3>Interested in getting it?</h3>
+<p>Leave a comment to the owner to let him know you want to help clean its fridge!</p>
+
+{{!-- List the comments --}}
+
+<h3>Comments</h3>
+{{#if product.comments}}
+
+{{#each product.comments}}
+  <p>{{comments}}</p>
+  <span>{{user}}</span>
+{{/each}}
+
+{{else}}
+<p>No request yet! 😕</p>
+{{/if}}
+
+
+{{!-- Add a review --}}
+<p>Add a comment</p>
+<form action="/product/{{product._id}}/comments" method="POST">
+  <label for="user">User:</label>
+  <input type="text" name="user" id="user">
+  {{!-- <input type="hidden" value={{book._id}}> --}}
+  <label for="comments">Comments:</label>
+  <textarea type="text" name="comments" id="comments"></textarea>
+
+  <button type="submit">Request the product!</button>
+</form>
