@@ -6,19 +6,33 @@ const productSchema = new Schema({
     required: true,
   },
   brand: String,
+  
   expiryDate: Date,
+  
   description: {
     type: String,
     required: true,
   },
-  location: [Number],
-  imgName: String,
-  imgPath: String,
-  imgPublicId: String,
+  
+  imgName:{
+    type: String, 
+    required: true,
+  },
+  imgPath: {
+    type: String, 
+    required: true,
+  },
+  imgPublicId: {
+    type: String, 
+    required: true,
+  },
+  
+ location: [Number],
 
   category: {
     type: String,
     required: true,
+  }
     enum: [
       "fruitsandvegetables",
       "alreadycooked",

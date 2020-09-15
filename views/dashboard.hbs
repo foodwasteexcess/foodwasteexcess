@@ -1,13 +1,35 @@
- {{#with user}}
-    <div class="user">
-      <h4>Hello {{this.firstName}}</h4>
-      <img src="{{this.imgPath}}" alt="Your image">
-      {{!-- <a href="/movie/delete/{{this._id}}">❌</a> --}}
-    </div>
-    {{/with}}
+{{#with user}}
+<div class="user">
+  <h1>Hello {{this.firstName}}!</h1>
 
-    <a href="/logout">Logout</a>
+  <img src="{{this.imgPath}}" alt="Your image" width="200px" height="150px">
+</div>
+{{/with}}
 
-<h1>Hallo</h1>
+{{#each product}}
 
- 
+<h2>Your products to give away:</h2>
+<p>Is everything still available?</p>
+
+<!-- Product part to be updated -->
+
+{{this.title}}
+{{this.imgPath}}
+
+<a href="/product/edit">Edit product</a>
+
+<a href="/product/delete">Delete product</a>
+
+
+{{#unless product}}
+
+<h2> No product sitting in your fridge or your cupboard about to expire? </h2>
+<p> Give your first excess and become part of the excess community!</p>
+
+{{/unless}}
+
+{{/each}}
+
+
+
+<a href="/logout">Logout</a>

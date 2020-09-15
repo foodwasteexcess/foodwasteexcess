@@ -1,6 +1,10 @@
+<h2>HELLO! here is the edit product page</h2>
+
 {{#with product}}
 
-<form action="/product/edit/{{_id}}" method="POST">
+
+
+<form action="/product/edit/{{_id}}" method="POST" enctype="multipart/form-data">
   <label for="title">{{title}}</label>
   <input type="text" name="title" id="title" value="{{title}}">
 
@@ -11,12 +15,12 @@
   <img src="{{this.imgPath}}" alt="poster for {{this.title}}">
   <a href="/movie/delete/{{this._id}}">❌</a>
 
-{{#unless this.imgPath}}
+  {{#unless this.imgPath}}
 
-  <label for="photo">Photo</label>
-  <input type="file" name="photo" id="photo">
+  <label for="photo">Add photo</label>
+  <input type="file" name="photo" id="photo" value=>
 
-{{/unless}}
+  {{/unless}}
 
   <button type="submit">Edit this product</button>
 </form>

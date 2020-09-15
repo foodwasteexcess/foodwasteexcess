@@ -11,9 +11,19 @@ const userSchema = new Schema({
     type: String, 
     required: true,
   },
-  imgName: String,
-  imgPath: String,
-  imgPublicId: String
+  imgName:{
+    type: String, 
+    required: true,
+  },
+  imgPath: {
+    type: String, 
+    required: true,
+  },
+  imgPublicId: {
+    type: String, 
+    required: true,
+  },
+  
 
 });
 
