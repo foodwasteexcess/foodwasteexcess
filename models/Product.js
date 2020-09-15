@@ -26,8 +26,8 @@ const productSchema = new Schema({
     type: String, 
     required: true,
   },
-  
- location: [Number],
+  //check for the location if it should be a string or number (#sophia)
+ location: [String],
 
   category: {
     type: String,
@@ -44,6 +44,7 @@ const productSchema = new Schema({
       "backeryproducts",
       "drinks",
     ],
+    comments: [String],
   });
 
 const Product = mongoose.model('Product', productSchema);

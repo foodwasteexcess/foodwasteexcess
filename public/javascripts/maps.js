@@ -40,7 +40,7 @@ const map = new mapboxgl.Map({
         <input name="brand" type="text" id="brand">
       
         <label for="start">When does your product expire?</label>
-        <input type="date" id="expiryDate" name="exiryDate" value="2020-09-01">
+        <input type="date" id="expiryDate" name="expiryDate" value="2020-09-01">
         
       
         <label for="description">Describe your product</label>
@@ -50,7 +50,7 @@ const map = new mapboxgl.Map({
         <input type="file" name="image" id="image">
       
        <label>Select a category</label>
-                   <select id = "myList">
+                   <select name="category" id = "myList">
                      <option value = "fruitsandvegetables">fruitsandvegetables</option>
                      <option value = "alreadycooked">alreadycooked</option>
                      <option value = "condiments">condiments</option>
@@ -62,7 +62,7 @@ const map = new mapboxgl.Map({
                      <option value = "drinks">drinks</option>
                    </select>
 
-                   <input style="display: none" type="text" name="coordinates" value=${Object.values(data.target.getLngLat())}>
+        <input style="display: none" type="text" name="coordinates" value=${Object.values(data.target.getLngLat())}>
 
       
         <button type="submit">Add your product</button>
