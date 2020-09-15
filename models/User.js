@@ -11,12 +11,9 @@ const userSchema = new Schema({
     type: String, 
     required: true,
   },
- 
   imgName: String,
   imgPath: String,
   imgPublicId: String
-  
-
 
 });
 
