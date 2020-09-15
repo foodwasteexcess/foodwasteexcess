@@ -7,7 +7,6 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
-=======
 //loginCheck(), add this later
 
 router.get('/add-products', (req, res, next) => {
