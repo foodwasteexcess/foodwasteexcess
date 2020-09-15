@@ -14,7 +14,7 @@ const map = new mapboxgl.Map({
     .addTo(map);
      
     function onDragEnd() {
-    var lngLat = marker.getLngLat();
+    let lngLat = marker.getLngLat();
     coordinates.style.display = 'block';
     coordinates.innerHTML =
     'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
