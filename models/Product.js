@@ -32,7 +32,7 @@ const productSchema = new Schema({
   category: {
     type: String,
     required: true,
-  }
+  },
     enum: [
       "fruitsandvegetables",
       "alreadycooked",
@@ -44,8 +44,7 @@ const productSchema = new Schema({
       "backeryproducts",
       "drinks",
     ],
-  },
-});
+  });
 
 const Product = mongoose.model('Product', productSchema);
 module.exports = Product;
