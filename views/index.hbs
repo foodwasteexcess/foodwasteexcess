@@ -1,4 +1,5 @@
 <header>
+
   <nav>
     <ul>
       <li> <a href="/login">Login</a> </li>
@@ -8,19 +9,38 @@
 </header>
 
 
-<h1>Make some room in your fridge & a happy neighbor!</h1>
-<p>Offer your excess of food to the people
-  around you instead of letting it go to waste</p>
+<h1 id="headtitle">Make some room in your fridge & a happy neighbour!</h1>
+<div class="infobox">
+  <p class="center"> Some products are sitting in your kitchen or about to expire? <br>Excess connects you to the people
+    around you that could love having it instead of letting it go to waste.</p>
+</div>
+
+{{!--
+<div>
+  <article>
+    How does it work?
+    Search for products by category and see what your nice neighbours are graciously giving away!
+  </article> --}}
 
 <a href="/app-products"></a>
 
-<button class="btn" type="submit">Search by product</button> <br> <br>
+{{!-- redirect to product category list --}}
 
-<button class="btn" type="submit">Go to the map to explore</button>
+<div class="btn-container">
+  <button class="btn homepage-btn" type="submit">I search!</button>
 
-<div class="wrapper">
-    <div class="navi" id="map" style='width: 50%; height: 40vh;'></div>
+  {{!-- redirect to product sign up view --}}
+
+  <button class="btn homepage-btn" type="submit">I give away!</button>
+
+</div>
 {{!-- 
+<button class="btn" type="submit">Go to the map to explore</button> <br><br>
+</div> --}}
+{{!-- 
+<div class="wrapper">
+  <div class="navi" id="map" style='width: 100%; height: 40vh;'></div>
+  {{!-- 
     <div>
         <a href="/about">
             

@@ -1,27 +1,55 @@
-<form action="/signup" method="POST" enctype="multipart/form-data">
 
-<label for="email">Email:</label>
-<input type="text" name="email" id="email" required>
-{{!-- username is what is console loggt in the auth.js --}}
+<header>
 
-<label for="password">Password:</label>
-<input type="password" name="password" id="password" required>
+  <nav>
+    <ul>
+      <li>  <a href="/">Home</a> </li>
+   
+    </ul>
+  </nav>
+</header>
 
-<label for="firstName">First Name:</label>
-<input type="firstName" name="firstName" id="firstName" required>
 
-<label for="lastName">Last Name:</label>
-<input type="lastName" name="lastName" id="lastName" required>
 
-  <label for="photo">Your picture</label>
-  <input type="file" name="photo" id="photo" required>
+<h2 class="title">Create an account to give away your products!</h2>
 
-<button type="submit">Sign up</button>
+<div class="form-container">
+  <form action="/signup" method="POST" enctype="multipart/form-data">
+
+    <div class="input-container">
+      <label class="label" for="email">Email:</label>
+      <input class="input" type="text" name="email" id="email" required>
+    </div>
+    {{!-- username is what is console loggt in the auth.js --}}
+    <div class="input-container">
+      <label class="label" for="password">Password:</label>
+      <input class="input" type="password" name="password" id="password" required>
+    </div>
+    <div class="input-container">
+      <label class="label" for="firstName">First Name:</label>
+      <input class="input" type="firstName" name="firstName" id="firstName" required>
+    </div>
+    <div class="input-container">
+      <label class="label" for="lastName">Last Name:</label>
+      <input class="input" type="lastName" name="lastName" id="lastName" required>
+    </div>
+    <div class="input-container picture">
+      <label class="label" for="photo">Your picture:</label>
+      <input class="input" type="file" name="photo" id="photo" required>
+    </div>
+</div>
+<button class="btn btn-signup" type="submit">Sign up</button>
+
+<p class="center">
+  Already a member?
+  <a href="/login">Login!</a>
+</p>
+
+
+
 
 </form>
 
 {{#if message}}
 <p style="color: red">{{message}}</p>
 {{/if}}
-
-<a href="/">Home</a>
