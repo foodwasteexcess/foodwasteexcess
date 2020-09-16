@@ -47,6 +47,7 @@ console.log("this is req.body yoooo", req.body.category)
         imgPublicId: imgPublicId,
         location: coordinates,
         category: category,
+        ownerid: req.session.user._id,
       }).then((productFromDb) => {
         console.log("this is the product yoo", productFromDb)
         res.redirect(`/product-details/${productFromDb._id}`);

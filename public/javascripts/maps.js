@@ -9,7 +9,7 @@ const map = new mapboxgl.Map({
   zoom: 9 // starting zoom
 });
 
-const popup = new mapboxgl.Popup();
+const popup = new mapboxgl.Popup({ className: "locationpopup"});
 
 let marker = new mapboxgl.Marker({
     draggable: true
@@ -33,7 +33,7 @@ marker.on("dragend", (data) => {
   popup.setHTML(
 
 
-    `<form class="form-container" id="map-add-product" action="/add-products" method="POST" id="form" enctype="multipart/form-data">
+    `<form class="form-container" id="form-add-product" action="/add-products" method="POST" id="form" enctype="multipart/form-data">
 
         <label class="label-add" for="title">Product name:</label>
         <input class="input" name="title" type="text" id="title">
