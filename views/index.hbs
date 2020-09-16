@@ -9,31 +9,37 @@
 </header>
 
 <body>
-<h1 id="headtitle">Make some room in your fridge & some happy neighbours!</h1>
-<div class="infobox">
-  <p class="center intro-text"> Some products are sitting in your kitchen or about to expire? <br><br>Excess connects the people
-   that could love having it instead of letting it go to waste.</p>
-</div>
+  <h1 id="headtitle">Make some room in your fridge & some happy neighbours!</h1>
+  <div class="infobox">
+    <p class="center intro-text"> Some products are sitting in your kitchen or about to expire? <br><br>Excess connects
+      the people
+      that could love having it instead of letting it go to waste.</p>
+  </div>
 
-{{!--
+  {{!--
 <div>
   <article>
     How does it work?
     Search for products by category and see what your nice neighbours are graciously giving away!
   </article> --}}
 
-<a href="/app-products"></a>
+  <a href="/app-products"></a>
 
-{{!-- redirect to product category list --}}
+  {{!-- redirect to product category list --}}
 
-<div class="btn-container">
-  <button class="btn homepage-btn" type="submit">I search!</button>
+  <div class="btn-container">
 
-  {{!-- redirect to product sign up view --}}
+      <form action="/products-overview">
+      <button class="btn homepage-btn" type="submit" value="Go to product overview" /> Search!</button>
+    </form>
 
-  <button class="btn homepage-btn" type="submit">I give away!</button>
+    {{!-- redirect to product sign up view --}}
 
-</div>
+    <form action="/signup">
+      <button class="btn homepage-btn" type="submit" value="Go to signup" /> Give away!</button>
+    </form>
+
+  </div>
 
 </body>
 {{!-- 

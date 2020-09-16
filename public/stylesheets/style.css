@@ -34,7 +34,11 @@ nav li {
 .btn {
   padding: 20px;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  background-color: #FB3B49;
+  box-shadow: 8px 8px 0 rgba(251, 59, 73, 0.2);
+  color: white;
+  border: none; }
 
 .btn-container {
   display: flex;
@@ -100,5 +104,30 @@ nav li {
 /*# Dashboard page styling*/
 .details {
   font-size: 15px; }
+
+/*# Login page styling*/
+.btn-login {
+  margin: 40px auto;
+  width: 200px;
+  max-width: 200px; }
+
+/*# Add product page styling*/
+.btn-add-product {
+  margin: 40px auto;
+  width: 200px;
+  max-width: 200px; }
+
+/*#form-add-product {
+  width: 33.3333%;
+}
+
+#map-add-product {
+  border-left: 1px solid #fff;
+  position: absolute;
+  left: 33.3333%;
+  width: 66.6666%;
+  top: 0;
+  bottom: 0;
+} */
 
 /*# sourceMappingURL=style.css.map */
