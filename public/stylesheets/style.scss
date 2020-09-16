@@ -1,42 +1,42 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+// body {
+//   padding: 50px;
+//   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+// }
 
-a {
-  color: #00B7FF;
-}
+// a {
+//   color: #00B7FF;
+// }
 
 
-nav ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-  align-items: baseline;
-  list-style: none;
-}
+// nav ul {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: nowrap;
+//   justify-content: flex-end;
+//   align-items: baseline;
+//   list-style: none;
+// }
 
-nav li {
-  margin-right: 20px;
-}
+// nav li {
+//   margin-right: 20px;
+// }
 
 #headtitle {
   display: flex;
   display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: baseline;
-	align-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: baseline;
+  align-content: center;
 }
 
 
 .btn {
-padding: 20px;
-display: flex;
-justify-content: center;
-align-items: baseline;
-align-content: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  align-content: center;
 
 }
