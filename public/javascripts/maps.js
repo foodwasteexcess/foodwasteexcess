@@ -52,7 +52,7 @@ const map = new mapboxgl.Map({
       
        <label>Select a category</label>
                    <select name="category" id = "myList">
-                     <option value = "fruitsandvegetables">fruitsandvegetables</option>
+                     <option value = "fruitsandvegetables">Fruitsandvegetables</option>
                      <option value = "alreadycooked">alreadycooked</option>
                      <option value = "condiments">condiments</option>
                      <option value = "dairy">dairy</option>

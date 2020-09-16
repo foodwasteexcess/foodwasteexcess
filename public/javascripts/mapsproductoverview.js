@@ -10,18 +10,17 @@ const maptwo = new mapboxgl.Map({
   zoom: 9 // starting zoom
   });
 
-  // this is just one default marker
-  // let markertwo = new mapboxgl.Marker({
-  //   draggable: false
-  //   })
-  //   .setLngLat([13.405, 52.52])
-  //   .addTo(maptwo);
 
 axios.get('/rawdata')
 .then((response)=> {
-  //console.log("Helloooooooooo youuuuuu",response.data)
+  console.log("Helloooooooooo youuuuuu",response.data)
+ 
  let locations = response.data
-
+ console.log("Helloooooooooo youuuuuu",locations._id);
+// bad naming here: 
+//location passed in forEach is one set of data i get from response.data
+// the location is stored in an array called location
+// this is why it's location.location
  locations.forEach((location)=> {
    let coordinates = location.location;
    console.log(coordinates);
@@ -32,8 +31,7 @@ axios.get('/rawdata')
       marker.addTo(maptwo);
 
 
-    marker.setPopup(new mapboxgl.Popup().setHTML('<h1>Hello World!</h1>')) // add popup
-
+    marker.setPopup(new mapboxgl.Popup().setHTML(`<div> <h1>${location.title}</h1><a href="/product-details/${location._id}">Check out the product</a></div>`)) // add popup
   // const popup = new mapboxgl.Popup();
   // popup.setHTML(
   //   'Hello'
