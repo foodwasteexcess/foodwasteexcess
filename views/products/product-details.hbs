@@ -19,6 +19,22 @@
   <p>Description: {{description}}</p>
   <p>This product expires by: {{expiryDate}}</p>
 
+
+
+  {{/with}}
+  
+
+
+{{#if ownercheck}}
+{{#with product}}
+<a href="/product/edit/{{_id}}">Edit your product</a>
+    {{/with}}
+    {{else}}
+    <p>You can not edit this product</p>
+
+{{/if}}
+
+
     {{#if product.comments}}
 
   {{#each product.comments}}

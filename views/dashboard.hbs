@@ -16,15 +16,15 @@
 <p class="details">Your profile picture:</p>
 
   <img src="{{this.imgPath}}" alt="Your image" width="200px" height="150px">
-    <a href="/picture/delete/{{this._id}}">❌</a>
+    {{!-- <a href="/picture/delete/{{this._id}}">❌</a> --}}
 </div>
 
-{{#unless this.imgPath}}
+{{!-- {{#unless this.imgPath}}
 
   <label for="photo">Add photo</label>
   <input type="file" name="photo" id="photo" value=>
 
-  {{/unless}}
+  {{/unless}} --}}
 
 {{/with}}
 
@@ -38,25 +38,27 @@
 {{this.title}}
 {{this.imgPath}}
 
-<a href="/product/edit">Edit product</a>
+<a href="/product/edit/{{_id}}">Edit product</a>
 
-<a href="/product/delete">Delete product</a>
+<a href="/product/delete/{{_id}}">Delete product</a>
 
 <p>Is there a new product you want to add?</p>
 
-<a href="/product/add">Add new product</a>
+<a href="/add-products">Add new product</a>
 
+{{/each}}
 
+{{!-- when there is no product do this: --}}
 {{#unless product}}
 
 <h2> No products sitting in your fridge or your cupboard about to expire? </h2>
 <p> Add your first product to give away!</p>
 
-<a href="/product/add">Add new product</a>
+<a href="/add-products">Add new product</a>
 
 {{/unless}}
 
-{{/each}}
+
 
 <p class="details" >Your location:</p>
 
