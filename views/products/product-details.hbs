@@ -20,6 +20,18 @@
 
 
   {{/with}}
+  
+
+
+{{#if ownercheck}}
+{{#with product}}
+<a href="/product/edit/{{_id}}">Edit your product</a>
+    {{/with}}
+    {{else}}
+    <p>You can not edit this product</p>
+
+{{/if}}
+
 
 
   <h3>Interested in getting it?</h3>
