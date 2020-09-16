@@ -1,13 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;900&display=swap");
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: overpass; }
+
+body#homepage {
+  background-image: url(../images/pantry-1.jpg);
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 .title {
   text-align: center; }
 
 /*# homepage styling*/
 a {
-  color: #00B7FF; }
+  color: #000;
+  text-decoration: none; }
+
+h1 {
+  font-family: overpass;
+  font-size: 3em;
+  color: #58a057; }
 
 nav ul {
   display: flex;
@@ -15,10 +31,24 @@ nav ul {
   flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: baseline;
-  list-style: none; }
+  list-style: none;
+  margin: auto; }
 
 nav li {
-  margin-right: 20px; }
+  margin-right: 20px;
+  padding: 0.5em 1em;
+  background: #58a057;
+  border-radius: 0.5em; }
+
+#homepage nav li {
+  background: #fff; }
+
+nav li a {
+  text-decoration: none;
+  color: #fff; }
+
+#homepage nav li a {
+  color: #000; }
 
 #headtitle {
   display: flex;
@@ -29,15 +59,31 @@ nav li {
   align-items: baseline;
   align-content: center;
   padding: 20px 0 40px 0;
-  font-size: 35px; }
+  font-size: 35px;
+  font-family: overpass;
+  font-size: 4em;
+  line-height: 1.3em;
+  color: #fff;
+  text-align: center;
+  width: 70%;
+  margin: auto; }
+
+.infobox {
+  background: #000;
+  border-radius: 0.8em;
+  color: #fff;
+  padding: 1em 2em;
+  line-height: 2em;
+  width: 70%;
+  margin: auto; }
 
 .btn {
   padding: 20px;
   display: flex;
   justify-content: center;
-  background-color: #FB3B49;
-  box-shadow: 8px 8px 0 rgba(251, 59, 73, 0.2);
+  background-color: #58a057;
   color: white;
+  border-radius: 0.5em;
   border: none; }
 
 .btn-container {
@@ -54,7 +100,8 @@ nav li {
   margin: 80px 0;
   width: 300px;
   max-width: 300px;
-  font-size: 16px; }
+  font-size: 16px;
+  margin: 4em 0; }
 
 .intro-text {
   font-size: 18px; }
@@ -158,7 +205,7 @@ nav li {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  margin: 0 70px; }
+  margin: 0 70px 0 0; }
 
 .titles {
   display: flex;
@@ -167,6 +214,29 @@ nav li {
   justify-content: space-between;
   align-items: stretch;
   align-content: space-between;
-  margin: 50px; }
+  margin: 2em 0; }
+
+.titles h2 {
+  width: 50%; }
+
+.desc {
+  font-size: 1.5em; }
+
+.brand {
+  text-transform: uppercase;
+  text-size: 0.8em; }
+
+.product {
+  background: #58a057;
+  border-radius: 0.8em;
+  padding: 1em 2em;
+  color: #fff;
+  margin-bottom: 3em; }
+
+.product-name {
+  font-family: overpass;
+  font-size: 1.3em;
+  color: #fff;
+  font-weight: 600; }
 
 /*# sourceMappingURL=style.css.map */
