@@ -44,7 +44,14 @@ const productSchema = new Schema({
       "backeryproducts",
       "drinks",
     ],
-    comments: [String],
+    comments: [{
+      userid: String,
+      commentitself: String,
+    }],
+    ownerid: {
+      type: Schema.Types.ObjectId,
+      ref:'User'
+    },
   });
 
 const Product = mongoose.model('Product', productSchema);

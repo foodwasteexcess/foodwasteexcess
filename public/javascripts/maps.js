@@ -1,3 +1,4 @@
+
 mapboxgl.accessToken ="pk.eyJ1Ijoic29waGlhZnJlZGVyaWtlIiwiYSI6ImNrZjNycHZ4ZjA0NWUyenM5eGV2cjNucTQifQ.ymS-cOe15o4AeRuok1nJnQ";
 
 const map = new mapboxgl.Map({
@@ -51,7 +52,7 @@ const map = new mapboxgl.Map({
       
        <label>Select a category</label>
                    <select name="category" id = "myList">
-                     <option value = "fruitsandvegetables">fruitsandvegetables</option>
+                     <option value = "fruitsandvegetables">Fruitsandvegetables</option>
                      <option value = "alreadycooked">alreadycooked</option>
                      <option value = "condiments">condiments</option>
                      <option value = "dairy">dairy</option>
@@ -70,12 +71,3 @@ const map = new mapboxgl.Map({
       );
     });
 
-//const map = new mapboxgl.Map({
-//   container: "map",
-//   style: "mapbox://styles/timbotimber/ck6gkirhv0tc41imrp5a44z9d",
-//   center: [13.405, 52.52],
-//   zoom: 4.5,
-//   options: {
-//     anchor: "top-right"
-//   }
-// });
