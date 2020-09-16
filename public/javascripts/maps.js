@@ -1,4 +1,6 @@
-mapboxgl.accessToken = "pk.eyJ1Ijoic29waGlhZnJlZGVyaWtlIiwiYSI6ImNrZjNycHZ4ZjA0NWUyenM5eGV2cjNucTQifQ.ymS-cOe15o4AeRuok1nJnQ";
+
+
+mapboxgl.accessToken ="pk.eyJ1Ijoic29waGlhZnJlZGVyaWtlIiwiYSI6ImNrZjNycHZ4ZjA0NWUyenM5eGV2cjNucTQifQ.ymS-cOe15o4AeRuok1nJnQ";
 
 const map = new mapboxgl.Map({
   container: 'map',
@@ -53,6 +55,7 @@ marker.on("dragend", (data) => {
         <div class="input-container picture">
        <label class="label-add" >Category:</label>
                    <select name="category" id = "myList">
+
                      <option value = "fruitsandvegetables">Fruits & Veggies</option>
                      <option value = "alreadycooked">Already Cooked</option>
                      <option value = "condiments">Condiments</option>
@@ -62,7 +65,7 @@ marker.on("dragend", (data) => {
                      <option value = "drygoods">Dry Goods</option>
                      <option value = "backeryproducts">Backery Products</option>
                      <option value = "drinks">Drinks</option>
-                   </select>
+                  </select>
                    </div>
 
         <input style="display: none" type="text" name="coordinates" value=${Object.values(data.target.getLngLat())}>
@@ -74,12 +77,3 @@ marker.on("dragend", (data) => {
   );
 });
 
-//const map = new mapboxgl.Map({
-//   container: "map",
-//   style: "mapbox://styles/timbotimber/ck6gkirhv0tc41imrp5a44z9d",
-//   center: [13.405, 52.52],
-//   zoom: 4.5,
-//   options: {
-//     anchor: "top-right"
-//   }
-// });
