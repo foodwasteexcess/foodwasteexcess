@@ -8,47 +8,48 @@
 </header>
 
 {{#with product}}
-
-<h2>Title: {{title}}</h2>
-<p>Brand: {{brand}}</p>
+<div>
+  <h2>{{title}}</h2>
   <img src="{{imgPath}}" alt="Your image" width="200px" height="150px">
-
-<p>Description:{{description}}</p>
-<p>This product expires by: {{expiryDate}}</p>
-
-<p>You can find this product at:{{location}}</p>
-<p>Category: {{category}}</p>
-
-
-{{/with}}
+  <p>Brand: {{brand}}</p>
+  <p>Category: {{category}}</p>
+  <p>Description: {{description}}</p>
+  <p>This product expires by: {{expiryDate}}</p>
+  {{!-- p>You can find this product at:{{location}}</p> Do we want the coordinates shown to users? --}}
 
 
-<h3>Interested in getting it?</h3>
-<p>Leave a comment to the owner to let him know you want to help clean its fridge!</p>
 
-{{!-- List the comments --}}
+  {{/with}}
 
-<h3>Comments</h3>
-{{#if product.comments}}
 
-{{#each product.comments}}
+  <h3>Interested in getting it?</h3>
+  <p>Leave a comment to the owner to let him know you want to help clean its fridge!</p>
+
+  {{!-- List the comments --}}
+
+  <h3>Comments</h3>
+  {{#if product.comments}}
+
+  {{#each product.comments}}
   <p>{{comments}}</p>
   <span>{{user}}</span>
-{{/each}}
+  {{/each}}
 
-{{else}}
-<p>No request yet! 😕</p>
-{{/if}}
+  {{else}}
+  <p>No request yet! </p>
+  {{/if}}
 
 
-{{!-- Add a review --}}
-<p>Add a comment</p>
-<form action="/product/{{product._id}}/comments" method="POST">
-  <label for="user">User:</label>
-  <input type="text" name="user" id="user">
-  {{!-- <input type="hidden" value={{book._id}}> --}}
-  <label for="comments">Comments:</label>
-  <textarea type="text" name="comments" id="comments"></textarea>
+  {{!-- Add a review --}}
+  <p>Add a comment</p>
+  <form action="/product/{{product._id}}/comments" method="POST">
+    <label for="user">User:</label>
+    <input type="text" name="user" id="user">
+    {{!-- <input type="hidden" value={{book._id}}> --}}
+    <label for="comments">Comments:</label>
+    <textarea type="text" name="comments" id="comments"></textarea>
 
-  <button type="submit">Request the product!</button>
-</form>
+    {{!-- <button type="submit">Request the product!</button> --}}
+  </form>
+
+</div>

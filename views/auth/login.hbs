@@ -1,12 +1,17 @@
-<form action="/login" method="POST">
+<form class="form-container" action="/login" method="POST">
 
-<label for="email">Email:</label>
-<input type="text" name="email" id="email" required>
-{{!-- email is what is console loggt in the auth.js --}}
+ <div class="input-container ">
+      <label class="label" for="email">Email:</label>
+      <input class="input" type="text" name="email" id="email" required>
+    </div>
+    {{!-- username is what is console loggt in the auth.js --}}
+    <div class="input-container">
+      <label class="label" for="password">Password:</label>
+      <input class="input" type="password" name="password" id="password" required>
+      <button class="btn btn-login" type="submit">Login!</button>
+    </div>
 
-<label for="password">Password:</label>
-<input type="password" name="password" id="password" required>
-<button type="submit">Login</button>
+
 
 </form>
 

@@ -1,0 +1,33 @@
+<header>
+
+  <nav>
+    <ul>
+      <li> <a href="/">Home</a> </li>
+
+    </ul>
+  </nav>
+</header>
+
+{{!-- here we have the map on the left 
+and the categrory list with links 
+that lead to the overview by category on the right --}}
+<h1 class="center">Products overview</h1>
+<div>
+  <div>
+    {{!-- map with all the products here --}}
+  </div>
+  <div>
+
+    {{#each product}}
+
+    {{!-- list of products here --}}
+    
+    <a href="/product-details">{{title}}</a> 
+    <img src="{{imgPath}}" alt="Your image" width="200px" height="150px">
+    <p>Brand: {{brand}}</p>
+    <p>{{description}}</p>
+    <p>It expires by: {{expiryDate}}</p>
+
+
+    {{/each}}
+  </div>
