@@ -10,6 +10,18 @@ const loginCheck = () => {
   }
 }
 
+// const productOwnerCheck = () => {
+  
+//   return (req,res,next) => {
+//     console.log("I am inside product owner check", req.body)
+//     // if (req.session.user === ownerid){
+//     //   next();
+//     // } else {
+//     //   res.redirect('/products-overview');
+//     // }
+//   }
+// }
 module.exports = {
-  loginCheck : loginCheck
+  loginCheck : loginCheck,
+  //productOwnerCheck: productOwnerCheck
 }

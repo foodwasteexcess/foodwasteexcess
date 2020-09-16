@@ -18,6 +18,26 @@
   <p>Category: {{category}}</p>
   <p>Description: {{description}}</p>
   <p>This product expires by: {{expiryDate}}</p>
+<<<<<<< HEAD
+=======
+  {{!-- p>You can find this product at:{{location}}</p> Do we want the coordinates shown to users? --}}
+
+
+
+  {{/with}}
+  
+
+
+{{#if ownercheck}}
+{{#with product}}
+<a href="/product/edit/{{_id}}">Edit your product</a>
+    {{/with}}
+    {{else}}
+    <p>You can not edit this product</p>
+
+{{/if}}
+
+>>>>>>> master
 
     {{#if product.comments}}
 
