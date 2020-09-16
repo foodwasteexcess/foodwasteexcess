@@ -61,4 +61,12 @@ router.get('/dashboard',loginCheck(), (req, res, next) => {
   res.render('dashboard', { user: req.session.user });
 });
 
+router.get('/rawdata', (req,res,nect)=> {
+  Product.find()
+  .then((product)=> {
+    res.json(product)
+  })
+  .catch((error)=> next(error))
+})
+
 module.exports = router;
