@@ -14,10 +14,26 @@
   <img src="{{imgPath}}" alt="Your image" width="200px" height="150px">
   <div class='product-info'>
     <h2>Product details</h2>
-    <p>Brand: {{brand}}</p>
-    <p>Category: {{category}}</p>
-    <p>Description: {{description}}</p>
-    <p>This product expires by: {{expiryDate}}</p>
+  <p>Brand: {{brand}}</p>
+  <p>Category: {{category}}</p>
+  <p>Description: {{description}}</p>
+  <p>This product expires by: {{expiryDate}}</p>
+
+
+
+  {{/with}}
+  
+
+
+{{#if ownercheck}}
+{{#with product}}
+<a href="/product/edit/{{_id}}">Edit your product</a>
+    {{/with}}
+    {{else}}
+    <p>You can not edit this product</p>
+
+{{/if}}
+
 
     {{#if product.comments}}
 
