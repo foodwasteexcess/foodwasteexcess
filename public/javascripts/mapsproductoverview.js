@@ -34,7 +34,7 @@ axios.get('/rawdata')
       marker.addTo(maptwo);
 
 
-      marker.setPopup(new mapboxgl.Popup().setHTML(`<div> <h1>${location.title}</h1><a href="/product-details/${location._id}">Check out the product</a></div>`)) // add popup
+      marker.setPopup(new mapboxgl.Popup().setHTML(`<div > <h1 style="color:white">${location.title}</h1><a href="/product-details/${location._id}">Check out the product</a></div>`)) // add popup
       // const popup = new mapboxgl.Popup();
       // popup.setHTML(
       //   'Hello'

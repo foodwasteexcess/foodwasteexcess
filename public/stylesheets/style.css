@@ -282,6 +282,9 @@ textarea {
   color: #fff;
   font-weight: 600; }
 
+.popupOverview {
+  color: #fff; }
+
 /*# product detail page styling*/
 .product-info {
   float: left;
