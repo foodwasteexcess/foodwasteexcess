@@ -63,7 +63,7 @@ router.get('/dashboard',loginCheck(), (req, res, next) => {
   res.render('dashboard', { user: req.session.user });
 });
 
-router.get('/rawdata', (req,res,nect)=> {
+router.get('/rawdata', (req,res,next)=> {
   Product.find()
   .then((product)=> {
     res.json(product)
