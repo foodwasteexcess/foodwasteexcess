@@ -8,29 +8,28 @@
 </header>
 {{#with product}}
 ​
-<div class='product-details'>
+<div class="product-details">
   <h1>{{title}}</h1>
-  <img src="{{imgPath}}" alt="Your image" width="200px" height="150px">
-  <div class='product-info'>
+  <img src="{{imgPath}}" alt="Your image" width="150px" height="150px">
+  <div class="product-info">
     <h2>Product details</h2>
     <p>Brand: {{brand}}</p>
     <p>Category: {{category}}</p>
     <p>Description: {{description}}</p>
     <p>This product expires by: {{expiryDate}}</p>
     ​
-    {{#if product.comments}}
+    {{#if comments}}
     ​
-    {{#each product.comments}}
-    <p>{{comments}}</p>
-    <span>{{user}}</span>
+    {{#each comments}}
+    <p>{{commentitself}}</p>
+    <p>{{userid}}</p>
     {{/each}}
     ​
     {{else}}
-    <p> No-one has requested this product yet, lucky you! </p>
+    <p>No-one has requested this product yet, lucky you! </p>
     {{/if}}
     ​
-
-    {{!-- p>You can find this product at:{{location}}</p> Do we want the coordinates shown to users? --}}
+    ​{{!-- p>You can find this product at:{{location}}</p> Do we want the coordinates shown to users? --}}
     ​
     ​
     ​
@@ -38,26 +37,26 @@
 
     ​
     ​<div class="btn-edit">
-    {{#if ownercheck}}
-    {{#with product}}
-    <a href="/product/edit/{{_id}}">Edit your product</a>
-    {{/with}}
-    {{else}}
-    <p>You can not edit this product</p>
-    ​
-    {{/if}}
-    ​</div>
+      {{#if ownercheck}}
+      {{#with product}}
+      <a href="/product/edit/{{_id}}">Edit your product</a>
+      {{/with}}
+      {{else}}
+      <p>No edit</p>
+      ​
+      {{/if}}
+      ​</div>
     ​
   </div>
   ​
-  <div class='messages'>
+  <div class="messages">
     <h2>Do you want this product?</h2>
     <p>Write a message to the owner to let them know you want to help clean their fridge!</p>
     ​
     {{!-- List the comments --}}
-    ​
+    ​{{#with product}}
     {{!-- Add a review --}}
-    <form action="/product/{{product._id}}/comments" method="POST">
+    <form action="/product-details/comments/{{_id}}" method="POST">
       <label for="user">Your name:</label>
       <input type="text" name="user" id="user">
       {{!-- <input type="hidden" value={{book._id}}> --}}
@@ -66,3 +65,5 @@
       <br>
       <button type="submit">Post my message!</button>
   </div>
+  ​
+  {{/with}}
