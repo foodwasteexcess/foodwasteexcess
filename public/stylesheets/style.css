@@ -288,7 +288,8 @@ textarea {
 /*# product detail page styling*/
 .product-info {
   float: left;
-  width: 70%; }
+  width: calc(70% - 2rem);
+  padding-left: 2rem; }
 
 .product-details img {
   width: 30%;
@@ -316,6 +317,9 @@ textarea {
   border-radius: 3em;
   padding: 1em 2em;
   width: 8em; }
+
+.img-product {
+  margin-right: 10px; }
 
 /*# submit button */
 .messages button {
