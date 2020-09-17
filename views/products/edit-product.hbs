@@ -1,39 +1,41 @@
-<h2>Here you can edit your product</h2>
+<h1 class="center">Want to change anything in your product description?</h1>
 
 {{#with product}}
 
-<form action="/product/edit/{{_id}}" method="POST" id="form">
+<div class="form-container signup">
+  <form action="/product/edit/{{_id}}" method="POST" id="form">
 
-  <label for="title">Title of your product:</label>
-  <input name="title" type="text" id="title" value="{{title}}">
+    <label class="label" for="title">Title of your product:</label>
+    <input name="title" type="text" id="title" value="{{title}}">
 
-  <label for="brand">Brand:</label>
-  <input name="brand" type="text" id="brand" value="{{brand}}">
+    <label class="label" for="brand">Brand:</label>
+    <input name="brand" type="text" id="brand" value="{{brand}}">
 
-  <label for="start">When does your product expire?</label>
-  <input type="date" id="expiryDate" name="exiryDate" value="2020-09-01">
+    <label class="label" for="start">When does your product expire?</label>
+    <input type="date" id="expiryDate" name="exiryDate" value="2020-09-01">
 
-  <label for="description">Describe your product</label>
-  <input name="description" type="text" id="description" value="{{description}}">
+    <label class="label" for="description">Describe your product:</label>
+    <input name="description" type="text" id="description" value="{{description}}">
 
-  {{!-- <label for="image">Add an image of your product </label>
+    {{!-- <label class="label" for="image">Add an image of your product </label>
   <input type="file" name="image" id="image"> --}}
 
-  <label>Select a category</label>
-  <select name="category" id="myList">
+    <label class="label">Select a category:</label>
+    <select name="category" id="myList">
 
-    <option value="fruitsandvegetables">Fruits & Veggies</option>
-    <option value="alreadycooked">Already Cooked</option>
-    <option value="condiments">Condiments</option>
-    <option value="dairy">Dairy</option>
-    <option value="meatandfish">Meat & fish</option>
-    <option value="veggieproducts">Veggie Products</option>
-    <option value="drygoods">Dry Goods</option>
-    <option value="backeryproducts">Backery Products</option>
-    <option value="drinks">Drinks</option>
-  </select>
+      <option value="fruitsandvegetables">Fruits & Veggies</option>
+      <option value="alreadycooked">Already Cooked</option>
+      <option value="condiments">Condiments</option>
+      <option value="dairy">Dairy</option>
+      <option value="meatandfish">Meat & fish</option>
+      <option value="veggieproducts">Veggie Products</option>
+      <option value="drygoods">Dry Goods</option>
+      <option value="backeryproducts">Backery Products</option>
+      <option value="drinks">Drinks</option>
+    </select>
 
-  <button type="submit">Add your product</button>
-</form>
+    <button type="submit">Edit your product</button>
+  </form>
 
-{{/with}}
+  {{/with}}
+</div>
