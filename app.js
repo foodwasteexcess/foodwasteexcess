@@ -10,9 +10,9 @@ const logger       = require('morgan');
 const path         = require('path');
 //const axios = require('axios');
 
-
+console.log(process.env.MONGO_DB_URI)
 mongoose
-  .connect('mongodb://localhost/foodwasteexcess', 
+  .connect(process.env.MONGO_DB_URI||'mongodb://localhost/foodwasteexcess', 
   {useNewUrlParser: true},
   {useUnifiedTopology: true}
   )

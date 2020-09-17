@@ -29,14 +29,18 @@ router.post("/signup", uploader.single("photo"), (req, res, next) => {
   const imgName = req.file.originalname;
   const imgPath = req.file.url;
   const imgPublicId = req.file.public_id;
-
+  console.log(req.body)
   if (password.length < 8) {
+    console.log("happening")
+
     res.render("./auth/signup", {
       message: "Your password needs to be 8 characters min",
     });
     return;
   }
   if (email === "") {
+    console.log("happening1")
+
     res.render("./auth/signup", {
       message: "Your email cannot be empty"
     });
@@ -46,11 +50,17 @@ router.post("/signup", uploader.single("photo"), (req, res, next) => {
   User.findOne({
     email: email
   }).then((found) => {
+    console.log("happening2")
+
     if (found !== null) {
+      console.log("happening3")
+
       res.render("./auth/signup", {
         message: "For this email an account already exists",
       });
     } else {
+      console.log("happening4")
+
       // when the username can be taken, hash the password, create the user and redirect to profile page
       const salt = bcrypt.genSaltSync();
       const hash = bcrypt.hashSync(password, salt);
@@ -64,6 +74,8 @@ router.post("/signup", uploader.single("photo"), (req, res, next) => {
         imgPath: imgPath,
         imgPublicId: imgPublicId,
       }).then((userFromDb) => {
+        console.log("happening5")
+
         res.redirect("/login");
       });
     }
