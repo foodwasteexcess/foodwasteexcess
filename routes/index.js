@@ -17,13 +17,16 @@ router.get('/add-products',loginCheck(),(req, res, next) => {
 
 router.get('/product-details/:id', (req, res, next) => {
   //console.log('this is whatever')
+  if (!req.session.user){
+    res.redirect("/login")
+  } else {
   Product.findById(req.params.id).then((product)=>{
     console.log("this is what i pass to product details product", product.ownerid.toString())
     console.log("this is what i pass to product details user",req.session.user._id,req.session.user._id === product.ownerid.toString())
     res.render('products/product-details', {product: product, userid:req.session.user._id, ownercheck:product.ownerid.toString()===req.session.user._id});
   })
   .catch(error => next(error))
-
+}
 });
 
 // add product
