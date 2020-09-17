@@ -1,3 +1,14 @@
+<header>
+
+  <nav>
+    <ul>
+      <li> <a href="/">Home</a> </li>
+      <li> <a href="/logout">Logout</a> </li>
+
+    </ul>
+  </nav>
+</header>
+
 {{#with user}}
 <div class="user">
   <h1 class="center">Hello {{this.firstName}}, welcome to your dashboard!</h1>
@@ -40,7 +51,7 @@
 {{!-- when there is no product do this: --}}
 {{#unless product}}
 
-<h2> No product sitting in your fridge or your cupboard about to expire? </h2>
+<h2> No products sitting in your fridge or your cupboard about to expire? </h2>
 <p> Add your first product to give away!</p>
 
 <a href="/add-products">Add new product</a>
@@ -51,10 +62,5 @@
 
 <p class="details" >Your location:</p>
 
-<div class="wrapper">
-  <div class="navi" id="map" style='width: 40%; height: 50vh;'></div>
-
-    </div>
 
 
-<a href="/logout">Logout</a>

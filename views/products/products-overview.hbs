@@ -14,11 +14,11 @@
 and the categrory list with links 
 that lead to the overview by category on the right --}}
 
-<h1 class ="center">Product overview</h1>
+<h1 class ="center">Browse the products up for grabs in your area!</h1>
 
 <div class="titles">
-<h2>Search by Product:</h2>
-<h2>Search by Location:</h2>
+<h2>Browse all products:</h2>
+<h2>View by Location:</h2>
 </div>
 
 <div class="wrapper">
@@ -30,12 +30,13 @@ that lead to the overview by category on the right --}}
 
 
       {{!-- list of products here --}}
-      <a href="/product-details/{{_id}}">{{title}}</a> <br><br>
+      <a class='product-name' href="/product-details/{{_id}}">{{title}}</a> <br><br>
       <img src="{{imgPath}}" alt="Your image" width="100px" max-width="100px" height="100px">
-      <p>Brand: {{brand}}</p>
-      <p>{{description}}</p>
-      <p>It expires by: {{expiryDate}}</p> <br>
-
+      <div class='info'>
+        <p class='brand'>Brand: {{brand}}</p>
+        <p class='desc'>{{description}}</p>
+        <p>It expires by: {{expiryDate}}</p> <br>
+      </div>
     </div>
     {{/each}}
 
