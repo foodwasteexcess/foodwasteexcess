@@ -32,13 +32,7 @@ router.get('/product/edit/:id', (req, res, next) => {
 //, uploader.single("image") add this if you want the user be able to update a picture
 router.post("/product/edit/:id", (req, res, next) => {
   //console.log("this is req.body yoooo", req.body.category)
-  const {
-    title,
-    brand,
-    expiryDate,
-    description,
-    category
-  } = req.body;
+  const { title, brand, expiryDate, description, category} = req.body;
   //console.log('this is image:' ,image)
   //console.log("this is req.file", req)
   // const coordinates = req.body.coordinates.split(',')
