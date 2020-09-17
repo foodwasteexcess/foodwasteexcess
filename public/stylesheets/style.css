@@ -200,10 +200,18 @@ textarea {
   display: none !important; }
 
 .mapboxgl-popup-content {
+  background: #58a057;
   padding: 0em 2em;
   color: #fff;
+  font-size: 1.3em;
   border-radius: 0.5em; }
 
+/* .mapboxgl-popup-content {
+  padding: 0em 2em;
+  color: #fff;
+  border-radius: 0.5em;
+
+} */
 .mapboxgl-map {
   overflow: inherit; }
 
