@@ -88,7 +88,7 @@ router.get("/products-overview", (req, res) => {
     });
 });
 
-router.post('product-details/comments/:id', (req, res, next) => {
+router.post('/product-details/comments/:id', (req, res, next) => {
   const {
     user,
     comments
