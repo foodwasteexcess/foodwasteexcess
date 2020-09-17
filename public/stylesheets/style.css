@@ -132,11 +132,13 @@ nav li a {
 .input-container {
   padding: 15px; }
 
-.label, label,
+.label,
+label,
 input {
   display: block; }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   height: 2em;
   border: none;
@@ -198,10 +200,8 @@ input, textarea {
   display: none !important; }
 
 .mapboxgl-popup-content {
-  background: #58a057;
   padding: 0em 2em;
   color: #fff;
-  font-size: 1.3em;
   border-radius: 0.5em; }
 
 .mapboxgl-map {
@@ -297,6 +297,14 @@ input, textarea {
 
 .messages textarea {
   height: 5em; }
+
+.btn-edit {
+  background: #58a057;
+  color: #fff;
+  border: none;
+  border-radius: 3em;
+  padding: 1em 2em;
+  width: 8em; }
 
 /*# submit button */
 .messages button {
