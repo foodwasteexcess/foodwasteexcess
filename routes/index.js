@@ -63,6 +63,7 @@ router.post("/add-products", loginCheck(), uploader.single("image"), (req, res, 
 
 router.get('/dashboard',loginCheck(), (req, res, next) => {
   console.log('this is the user: ', req.session.user);
+  console.log('This is the req.body', req.body)
   res.render('dashboard', { user: req.session.user });
 });
 
