@@ -2,7 +2,10 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
-const { uploader, cloudinary } = require("../config/cloudinary");
+const {
+  uploader,
+  cloudinary
+} = require("../config/cloudinary");
 
 router.get("/signup", (req, res, next) => {
   res.render("./auth/signup");
@@ -15,7 +18,12 @@ router.get("/login", (req, res, next) => {
 router.post("/signup", uploader.single("photo"), (req, res, next) => {
   //if password is empty or <8 charachter ->
   // show the form again with error message
-  const { email, password, firstName, lastName } = req.body;
+  const {
+    email,
+    password,
+    firstName,
+    lastName
+  } = req.body;
   //console.log('this is photo:' ,photo)
   //console.log("this is req.file", req)
   const imgName = req.file.originalname;
@@ -29,11 +37,15 @@ router.post("/signup", uploader.single("photo"), (req, res, next) => {
     return;
   }
   if (email === "") {
-    res.render("./auth/signup", { message: "Your email cannot be empty" });
+    res.render("./auth/signup", {
+      message: "Your email cannot be empty"
+    });
     return;
   }
   //check if username exists in database -> show message if it already exists
-  User.findOne({ email: email }).then((found) => {
+  User.findOne({
+    email: email
+  }).then((found) => {
     if (found !== null) {
       res.render("./auth/signup", {
         message: "For this email an account already exists",
@@ -59,13 +71,20 @@ router.post("/signup", uploader.single("photo"), (req, res, next) => {
 });
 
 router.post("/login", (req, res, next) => {
-  const { email, password } = req.body;
+  const {
+    email,
+    password
+  } = req.body;
   //first username is the field in the user document from the database
   //second is the username from the input field from the log in form
-  User.findOne({ email: email })
+  User.findOne({
+      email: email
+    })
     .then((found) => {
       if (found === null) {
-        res.render("./auth/login", { message: "Invalid credentials" });
+        res.render("./auth/login", {
+          message: "Invalid credentials"
+        });
         return;
       }
       //first password is the userinput - second is the hash from the database
@@ -74,7 +93,9 @@ router.post("/login", (req, res, next) => {
         req.session.user = found;
         res.redirect("dashboard");
       } else {
-        res.render("./auth/login", { message: "Invalid credentials" });
+        res.render("./auth/login", {
+          message: "Invalid credentials"
+        });
       }
     })
     .catch((error) => {
@@ -93,3 +114,4 @@ router.get("/logout", (req, res) => {
 });
 
 module.exports = router;
+//random comment
