@@ -16,6 +16,9 @@ body#homepage {
   background-size: cover;
   background-repeat: no-repeat; }
 
+.bold {
+  font-weight: bold; }
+
 .title {
   text-align: center; }
 
@@ -318,9 +321,6 @@ textarea {
   padding: 1em 2em;
   width: 8em; }
 
-.img-product {
-  margin-right: 10px; }
-
 /*# submit button */
 .messages button {
   background: #000;
@@ -328,5 +328,8 @@ textarea {
   border: none;
   border-radius: 3em;
   padding: 1em 2em; }
+
+.field {
+  font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */
