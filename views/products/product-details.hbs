@@ -14,41 +14,21 @@
   <img src="{{imgPath}}" alt="Your image" width="200px" height="150px">
   <div class='product-info'>
     <h2>Product details</h2>
-  <p>Brand: {{brand}}</p>
-  <p>Category: {{category}}</p>
-  <p>Description: {{description}}</p>
-  <p>This product expires by: {{expiryDate}}</p>
-<<<<<<< HEAD
-=======
-  {{!-- p>You can find this product at:{{location}}</p> Do we want the coordinates shown to users? --}}
-
-
-
-  {{/with}}
-  
-
-
-{{#if ownercheck}}
-{{#with product}}
-<a href="/product/edit/{{_id}}">Edit your product</a>
-    {{/with}}
-    {{else}}
-    <p>You can not edit this product</p>
-
-{{/if}}
-
->>>>>>> master
+    <p>Brand: {{brand}}</p>
+    <p>Category: {{category}}</p>
+    <p>Description: {{description}}</p>
+    <p>This product expires by: {{expiryDate}}</p>
 
     {{#if product.comments}}
 
-  {{#each product.comments}}
-  <p>{{comments}}</p>
-  <span>{{user}}</span>
-  {{/each}}
+    {{#each product.comments}}
+    <p>{{comments}}</p>
+    <span>{{user}}</span>
+    {{/each}}
 
-  {{else}}
-  <p>No-one has requested this product yet, lucky you! </p>
-  {{/if}}
+    {{else}}
+    <p>No-one has requested this product yet, lucky you! </p>
+    {{/if}}
 
   </div>
   {{!-- p>You can find this product at:{{location}}</p> Do we want the coordinates shown to users? --}}
@@ -56,6 +36,14 @@
 
 
   {{/with}}
+
+  {{#if ownercheck}}
+  {{#with product}}
+  <a href="/product/edit/{{_id}}">Edit your product</a>
+  {{/with}}
+  {{else}}
+  <p>You can not edit this product</p>
+  {{/if}}
 
   <div class='messages'>
     <h2>Do you want this product?</h2>
