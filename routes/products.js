@@ -4,6 +4,7 @@ const { loginCheck } = require("./middlewares");
 const Product = require('../models/Product');
 const User = require('../models/User');
 const { uploader, cloudinary } = require("../config/cloudinary");
+const { findByIdAndUpdate } = require('../models/User');
 
 
 //route to edit a product starts here:
@@ -68,6 +69,22 @@ router.get("/products-overview", (req, res) => {
      });
  });
 
+router.post('product-details/comments/:id', (req,res,next)=> {
+  const {user, comments} = req.body;
+
+  Product;findByIdAndUpdate(req.params.id, {
+    $push: {
+      comments: {
+        userid: user,
+        commentitself: comments
+      }
+    }
+  }).then(product => {
+    res.redirect(`/product-details/${product._id}`)
+  }).catch(error => {
+    next(error)
+  })
+});
 
 
 module.exports = router;
