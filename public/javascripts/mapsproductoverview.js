@@ -3,7 +3,7 @@
 // generate the access token from map box.com
 mapboxgl.accessToken = "pk.eyJ1Ijoic29waGlhZnJlZGVyaWtlIiwiYSI6ImNrZjNycHZ4ZjA0NWUyenM5eGV2cjNucTQifQ.ymS-cOe15o4AeRuok1nJnQ";
 console.log("hqppeningqdkjqdkj")
-
+console.log(mapboxgl)
 const maptwo = new mapboxgl.Map({
   container: 'maptwo',
   style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
