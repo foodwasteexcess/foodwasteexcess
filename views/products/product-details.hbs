@@ -37,14 +37,14 @@
 
     {{#if product.comments}}
 
-  {{#each product.comments}}
-  <p>{{comments}}</p>
-  <span>{{user}}</span>
-  {{/each}}
+    {{#each product.comments}}
+    <p>{{comments}}</p>
+    <span>{{user}}</span>
+    {{/each}}
 
-  {{else}}
-  <p>No-one has requested this product yet, lucky you! </p>
-  {{/if}}
+    {{else}}
+    <p>No-one has requested this product yet, lucky you! </p>
+    {{/if}}
 
   </div>
   {{!-- p>You can find this product at:{{location}}</p> Do we want the coordinates shown to users? --}}
@@ -52,6 +52,14 @@
 
 
   {{/with}}
+
+  {{#if ownercheck}}
+  {{#with product}}
+  <a href="/product/edit/{{_id}}">Edit your product</a>
+  {{/with}}
+  {{else}}
+  <p>You can not edit this product</p>
+  {{/if}}
 
   <div class='messages'>
     <h2>Do you want this product?</h2>
