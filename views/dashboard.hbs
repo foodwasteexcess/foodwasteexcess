@@ -13,10 +13,10 @@
 <div class="user">
   <h1 class="center">Hello {{this.firstName}}, welcome to your dashboard!</h1>
 
-<p class="details">Your profile picture:</p>
+  <p class="details">Your profile picture:</p>
 
   <img src="{{this.imgPath}}" alt="Your image" width="200px" height="150px">
-    {{!-- <a href="/picture/delete/{{this._id}}">❌</a> --}}
+  {{!-- <a href="/picture/delete/{{this._id}}">❌</a> --}}
 </div>
 
 {{!-- {{#unless this.imgPath}}
@@ -52,15 +52,8 @@
 {{#unless product}}
 
 <h2> No products sitting in your fridge or your cupboard about to expire? </h2>
-<p> Add your first product to give away!</p>
 
-<a href="/add-products">Add new product</a>
-
+<div class="btn-edit">
+  <a href="/add-products">Add new product</a>
+</div>
 {{/unless}}
-
-
-
-<p class="details" >Your location:</p>
-
-
-
